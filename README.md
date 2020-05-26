@@ -15,13 +15,13 @@ Let's go through each file and flesh out how this codebase works.
     ``` git clone git@github.com:wannabewayno/Project-Rundown.git ```
 
     You can copy the git link from the repo page as shown below
-    <img style="max-width:50px; text-align:center;" src="./images/git-clone.PNG"/>
+    <img width="200px" src="./images/git-clone.PNG"/>
 
 * From here on, everything will be explained using the codeBase folder as the root directory
     Go ahead and move into this folder (in git bash) ``` cd codebase ```
 * We should have a folder structure that looks like 
    
-<img style="width:50px;" src="./images/folder-structure.PNG"/>
+<img width="200px" src="./images/folder-structure.PNG"/>
 
 * First off, we see a file called package.json. This is a sort of configuration file for npm that installs and keeps track of 3rd party dependencies used in the codeBase.
 * Let's go ahead and install all necessary dependencies that this codebase relies on by running
@@ -29,7 +29,7 @@ Let's go through each file and flesh out how this codebase works.
 * This will automatically look for a package.json file and install all dependencies listed under the 'dependencies' key 
 * Here's an example of running npm install on my machine
   
-<img style="width:50px;" src="./images/npm-install.PNG"/>
+<img width="200px" src="./images/npm-install.PNG"/>
 
 ### Dependencies
 Now that we have the repo cloned and all of our dependencies installed,
@@ -39,7 +39,7 @@ A good starting point in understanding a codeBase is to first check the package.
 
 
 #### package.json
-<img style="width:50px;" src="./images/package-json.PNG"/>
+<img width="200px" src="./images/package-json.PNG"/>
 
 ##### scripts
 
@@ -53,7 +53,7 @@ Scripts are called by running ```npm <script name>``` and they execute associate
 
 
 ##### "dependencies"
-<img style="width:50px;" src="./images/dependencies.PNG"/> 
+<img width="200px" src="./images/dependencies.PNG"/> 
 
 Here we see the all the dependencies that package.json installed when we run ```npm install```
 
@@ -78,7 +78,7 @@ Here we see the all the dependencies that package.json installed when we run ```
  So the next best thing is to run the code and see what it's doing so that when we peek under the hood, we'll have a better idea of it's intention.
 
  running npm start we end up this....
- <img style="width:50px;" src="./images/npm-start.PNG"/>
+ <img width="200px" src="./images/npm-start.PNG"/>
 
  An error...
 
@@ -87,7 +87,7 @@ Here we see the all the dependencies that package.json installed when we run ```
  The parameters for connecting to a database through sequelize is found in the configuration file. 
 
  ### config 
- <img style="width:50px;" src="./images/config.PNG"/>
+ <img width="200px" src="./images/config.PNG"/>
  The configuration file is usually found in the root directory and handles all connection requirements for a database (if the app is connecting to a database).
 
  Here we see a two files: "config.json", "passport.js" and a directory: middleware.
@@ -99,7 +99,7 @@ Here we see the all the dependencies that package.json installed when we run ```
  configured for our database. 
 
  ##### config.json
- <img style="width:50px;" src="images/config-json.PNG"/>
+ <img width="200px" src="images/config-json.PNG"/>
  The configuration file handles all the information required to connect to a database.
  here, we see that all password fields are set to null.
  The username is generic.
@@ -118,10 +118,10 @@ Here we see the all the dependencies that package.json installed when we run ```
 The closest context to our situation at the moment is development. For the purpose of this walk through, i've modified the data under the "development" key in config.json to connect to a dummy database on my machine.
 
 Here is what is looks like
-<img style="width:50px;" src="./images/config-json-development.PNG"/>
+<img width="200px" src="./images/config-json-development.PNG"/>
 
 Let's try ```npm start again```
-<img style="width:50px;" src="./images/npm-start-working.PNG"/>
+<img width="200px" src="./images/npm-start-working.PNG"/>
 
 > This seemed to do the trick.
 
@@ -146,7 +146,8 @@ this should get you here.
 By filling in the configuration file correctly, sequelize is making a connection our database, not throwing an error and not causing the server.js file to crash.
 
 Hence we're now seeing the root route "/"
-<img width="50px" src="./images/route-default.PNG"/>
+
+<img width="200px" src="./images/route-default.PNG"/>
 
 What we're seeing is a html file being sent to the browser when we hit the default route "/".
 The route "/" is the forward slash at the end of http://localhost:8080/
