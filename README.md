@@ -15,7 +15,8 @@ Let's go through each file and flesh out how this codebase works.
     ``` git clone git@github.com:wannabewayno/Project-Rundown.git ```
 
     You can copy the git link from the repo page as shown below
-    <img width="200px" src="./images/git-clone.PNG"/>
+
+    <img width="350px" src="./images/git-clone.PNG"/>
 
 * From here on, everything will be explained using the codeBase folder as the root directory
     Go ahead and move into this folder (in git bash) ``` cd codebase ```
