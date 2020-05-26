@@ -72,22 +72,22 @@ Here we see the all the dependencies that package.json installed when we run ```
 <a href="https://www.npmjs.com/package/nodemon">bcryptjs</a> 
 
 ##### express
-<a href="https://www.npmjs.com/package/express">bcryptjs</a> 
+<a href="https://www.npmjs.com/package/express">express</a> 
 
 ##### express-session
-<a href="https://www.npmjs.com/package/express-session">bcryptjs</a> 
+<a href="https://www.npmjs.com/package/express-session">express-session</a> 
 
 ##### mysql2
-<a href="https://www.npmjs.com/package/mysql2">bcryptjs</a> 
+<a href="https://www.npmjs.com/package/mysql2">mysql2</a> 
 
 ##### passport
-<a href="https://www.npmjs.com/package/passport">bcryptjs</a> 
+<a href="https://www.npmjs.com/package/passport">passport</a> 
 
 ##### passport-local
-<a href="https://www.npmjs.com/package/passport-local">bcryptjs</a> 
+<a href="https://www.npmjs.com/package/passport-local">passport-local</a> 
 
 ##### sequelize
-<a href="https://www.npmjs.com/package/sequelize">bcryptjs</a> 
+<a href="https://www.npmjs.com/package/sequelize">sequelize</a> 
 
 #### npm start
  Remember that npm start script earlier? "start" is usually attributed to executing the main function of a codeBase. This will have associated with it a list of code to be run through node.
