@@ -163,7 +163,7 @@ this should get you here.
 
 #### What's happening?
 ```npm start``` is running our server.js file which uses express to set up a server and handle queries from the browser. 
-By filling in the configuration file correctly, sequelize is making a connection our database, not throwing an error and not causing the server.js file to crash.
+By filling in the configuration file correctly, sequelize is making a connection to our database, not throwing an error and not causing the server.js file to crash.
 
 Hence we're now seeing the root route "/"
 

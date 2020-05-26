@@ -10,8 +10,8 @@ passport.use(new LocalStrategy(
     usernameField: "email"
   },
 
-  //validation function 
-  //validates a user login
+  // a validation function 
+  // Queries the database for an email, and then does stuff 
   function(email, password, done) {
     // When a user tries to sign in this code runs
     db.User.findOne({
