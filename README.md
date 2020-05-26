@@ -47,14 +47,15 @@ Scripts are called by running ```npm <script name>``` and they execute associate
   * "test" we see that no tests are specified
   * "start" this will run ```node server.js``` which will run server.js through node
   * "watch" will run ```nodemon server.js``` which will run server.js through nodemon (if installed)
-    * nodemon is a 3rd party dependency that is used during developement to restart a server if any changes to the file running the server occur. nodemon is not listed as a dependency for this project (most devs will have this installed globally on their machine as standard, like myself)
-    * usually this this listed a dev-dependency, but in-case it is omitted. You can learn more about nodemon here -> <a href="https://www.npmjs.com/package/nodemon">nodemon</a> 
+    * nodemon is a 3rd party dependency that is used during developement to restart a server if any changes to server.js occur.
+    * nodemon is not listed as a dependency for this project (most devs will have this installed globally on their machine as standard, like myself)
+    * usually this is listed as a dev-dependency, but in-case it is omitted. You can learn more about nodemon here -> <a href="https://www.npmjs.com/package/nodemon">nodemon</a> 
 
 
 ##### "dependencies"
 <img src="./images/dependencies.PNG"/> 
 
-Here we see the all the dependencies that package.json installed when we ran ```npm install```
+Here we see the all the dependencies that package.json installed when we run ```npm install```
 
 ##### bcryptjs
 
@@ -71,12 +72,13 @@ Here we see the all the dependencies that package.json installed when we ran ```
 ##### seqeulize
 
 #### npm start
- Remember that npm start script earlier? "start" is usually attributed to executing the main function of a codeBase. This will have assocaited with it a list of code to be run through node that will run the application it was coded for. 
+ Remember that npm start script earlier? "start" is usually attributed to executing the main function of a codeBase. This will have associated with it a list of code to be run through node.
+  * This code will run the application it was coded for. 
 
  So the next best thing is to run the code and see what it's doing so that when we peek under the hood, we'll have a better idea of it's intention.
 
  running npm start we end up this....
- <img src="./image/npm-start.PNG"/>
+ <img src="./images/npm-start.PNG"/>
 
  An error...
 
