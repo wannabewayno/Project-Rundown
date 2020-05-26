@@ -8,13 +8,13 @@ In this repo, we have the start of a boilerPlate codebase anyone can use in thei
 Let's go through each file and flesh out how this codebase works.
 
 
-<a href="#installation">Installation</a>
-<a href="#Dependencies">Dependencies</a>
-<a href="#config">config</a>
-    <a href="#config.json">config.json</a>
-    <a href="#passport.js">passport.js</a>
-    <a href="#config">config</a>
-    <a href="#config">config</a>
+* <a href="#installation">Installation</a>
+
+* <a href="#Dependencies">Dependencies</a>
+
+* <a href="#config">config</a>
+    * <a href="#config.json">config.json</a>
+    * <a href="#passport.js">passport.js</a>
 
 
 ### Installation
