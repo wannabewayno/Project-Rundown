@@ -146,7 +146,7 @@ this should get you here.
 By filling in the configuration file correctly, sequelize is making a connection our database, not throwing an error and not causing the server.js file to crash.
 
 Hence we're now seeing the root route "/"
-<img style="width:50px;" src="./images/route-default.PNG"/>
+<img width="50px" src="./images/route-default.PNG"/>
 
 What we're seeing is a html file being sent to the browser when we hit the default route "/".
 The route "/" is the forward slash at the end of http://localhost:8080/
