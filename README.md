@@ -29,7 +29,7 @@ Let's go through each file and flesh out how this codebase works.
 * This will automatically look for a package.json file and install all dependencies listed under the 'dependencies' key 
 * Here's an example of running npm install on my machine
   
-<img width="200px" src="./images/npm-install.PNG"/>
+<img width="600px" src="./images/npm-install.PNG"/>
 
 ### Dependencies
 Now that we have the repo cloned and all of our dependencies installed,
@@ -39,7 +39,7 @@ A good starting point in understanding a codeBase is to first check the package.
 
 
 #### package.json
-<img width="200px" src="./images/package-json.PNG"/>
+<img width="500px" src="./images/package-json.PNG"/>
 
 ##### scripts
 
@@ -53,7 +53,7 @@ Scripts are called by running ```npm <script name>``` and they execute associate
 
 
 ##### "dependencies"
-<img width="200px" src="./images/dependencies.PNG"/> 
+<img width="300px" src="./images/dependencies.PNG"/> 
 
 Here we see the all the dependencies that package.json installed when we run ```npm install```
 
@@ -78,7 +78,8 @@ Here we see the all the dependencies that package.json installed when we run ```
  So the next best thing is to run the code and see what it's doing so that when we peek under the hood, we'll have a better idea of it's intention.
 
  running npm start we end up this....
- <img width="200px" src="./images/npm-start.PNG"/>
+
+ <img width="500px" src="./images/npm-start.PNG"/>
 
  An error...
 
@@ -99,7 +100,7 @@ Here we see the all the dependencies that package.json installed when we run ```
  configured for our database. 
 
  ##### config.json
- <img width="200px" src="images/config-json.PNG"/>
+ <img width="400px" src="images/config-json.PNG"/>
  The configuration file handles all the information required to connect to a database.
  here, we see that all password fields are set to null.
  The username is generic.
@@ -118,10 +119,12 @@ Here we see the all the dependencies that package.json installed when we run ```
 The closest context to our situation at the moment is development. For the purpose of this walk through, i've modified the data under the "development" key in config.json to connect to a dummy database on my machine.
 
 Here is what is looks like
-<img width="200px" src="./images/config-json-development.PNG"/>
+
+<img width="300px" src="./images/config-json-development.PNG"/>
 
 Let's try ```npm start again```
-<img width="200px" src="./images/npm-start-working.PNG"/>
+
+<img width="600px" src="./images/npm-start-working.PNG"/>
 
 > This seemed to do the trick.
 
@@ -147,7 +150,7 @@ By filling in the configuration file correctly, sequelize is making a connection
 
 Hence we're now seeing the root route "/"
 
-<img width="200px" src="./images/route-default.PNG"/>
+<img width="600px" src="./images/route-default.PNG"/>
 
 What we're seeing is a html file being sent to the browser when we hit the default route "/".
 The route "/" is the forward slash at the end of http://localhost:8080/
