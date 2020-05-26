@@ -7,11 +7,15 @@ In this repo, we have the start of a boilerPlate codebase anyone can use in thei
 
 Let's go through each file and flesh out how this codebase works.
 
-<p align="center">
-    <a href="#installation">Installation</a>
-    <a href="#Dependencies">Dependencies</a>
+
+<a href="#installation">Installation</a>
+<a href="#Dependencies">Dependencies</a>
+<a href="#config">config</a>
+    <a href="#config.json">config.json</a>
+    <a href="#passport.js">passport.js</a>
     <a href="#config">config</a>
-</p>
+    <a href="#config">config</a>
+
 
 ### Installation
 * Go ahead and clone this repo. Using your git flavoured terminal.
@@ -107,7 +111,7 @@ Here we see the all the dependencies that package.json installed when we run ```
  
  configured for our database. 
 
- ##### config.json
+ #### config.json
  <img width="400px" src="images/config-json.PNG"/>
  The configuration file handles all the information required to connect to a database.
  here, we see that all password fields are set to null.
