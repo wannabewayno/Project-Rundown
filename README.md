@@ -7,6 +7,12 @@ In this repo, we have the start of a boilerPlate codebase anyone can use in thei
 
 Let's go through each file and flesh out how this codebase works.
 
+<p align="center">
+    <a href="#installation">Installation</a>
+    <a href="#Dependencies">Dependencies</a>
+    <a href="#config">config</a>
+</p>
+
 ### Installation
 * Go ahead and clone this repo. Using your git flavoured terminal.
     I'm using git-bash as I'm a dirty windows user.
@@ -59,6 +65,7 @@ Scripts are called by running ```npm <script name>``` and they execute associate
 Here we see the all the dependencies that package.json installed when we run ```npm install```
 
 ##### bcryptjs
+![bcrypt.js](https://www.npmjs.com/package/bcryptjs) 
 
 ##### express
 
@@ -84,7 +91,7 @@ Here we see the all the dependencies that package.json installed when we run ```
 
  An error...
 
- Looking at the error however, we can see in the first line that this seems to be a connection problem using sequelize. Sequelize as defined <a href="/sequelize">above</a> is an npm package used to query an SQL database. 
+ Looking at the error however, we can see in the first line that this seems to be a connection problem using sequelize. Sequelize as defined <a href="#sequelize">above</a> is an npm package used to query an SQL database. 
 
  The parameters for connecting to a database through sequelize is found in the configuration file. 
 
