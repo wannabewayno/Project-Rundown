@@ -125,13 +125,13 @@ Here we see the all the dependencies that package.json installed when we run ```
 
  The keys "development","test" and "production" refer to different configurations of the database required for the purpose in mind.
  
-* ##### "production" 
+##### "production" 
   * will the configuration information used when the app is deployed and live. 
 
-* ##### "test"
+##### "test"
  * Will be the database you might use to perfrom testing and you might have specific data seeded in the database for testing out particular cases of your codebase.
 
-* ##### "development" 
+##### "development" 
   * Is the database configuration used when developing the code and performing manual testing.
 
 The closest context to our situation at the moment is development. For the purpose of this walk through, i've modified the data under the "development" key in config.json to connect to a dummy database on my machine.
@@ -157,8 +157,7 @@ Let's go ahead and see what this app is trying to do.
 Now that we have run ```npm start``` successfully (by setting up the config.json file)
 
 we can go to the browser of your choice (for me, chrome) and type in 
-* http://localhost:8080
-
+> <a href="http://localhost:8080">http://localhost:8080</a>
 this should get you here.
 
 
