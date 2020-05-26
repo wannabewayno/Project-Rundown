@@ -1,6 +1,6 @@
 # Project-Rundown
 BoilerPlate code saves you from writing repeated but necessary code in your project files.
-A boilerPlate codeBase kickstarts a dev-project by not having to think about or set-up necessary dependenies and file structures. This allows you think about the problem at hand and get started on wiritng unique code for your app.
+A boilerPlate codeBase kickstarts a dev-project by not having to think about or set-up necessary dependencies and file structures. This allows you to think about the problem at hand and get started on wiritng unique code for your app.
 
 ## The Rundown
 In this repo, we have the start of a boilerPlate codebase anyone can use in their next project.
@@ -18,14 +18,18 @@ Let's go through each file and flesh out how this codebase works.
     <img style="max-width:50px; text-align:center;" src="./images/git-clone.PNG"/>
 
 * From here on, everything will be explained using the codeBase folder as the root directory
-  * Go ahead and move into this folder (in git bash) ``` cd codebase ```
+    Go ahead and move into this folder (in git bash) ``` cd codebase ```
 * We should have a folder structure that looks like 
-    <img style="max-width:50px; text-align:center;" src="./images/folder-structure.PNG"/>
+   
+<img style="max-width:50px; text-align:center;" src="./images/folder-structure.PNG"/>
+
 * First off, we see a file called package.json. This is a sort of configuration file for npm that installs and keeps track of 3rd party dependencies used in the codeBase.
 * Let's go ahead and install all necessary dependencies that this codebase relies on by running
-* ``` npm install ```. This will automatically look for a package.json file and install all dependencies listed under the 'dependencies' key 
+ ``` npm install ```.
+* This will automatically look for a package.json file and install all dependencies listed under the 'dependencies' key 
 * Here's an example of running npm install on my machine
-  <img src="./images/npm-install"/>
+  
+<img src="./images/npm-install.PNG"/>
 
 ### Dependencies
 Now that we have the repo cloned and all of our dependencies installed,
