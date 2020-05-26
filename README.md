@@ -15,4 +15,5 @@ Find a place you want to house all these files in your machine and run:
 ``` git clone git@github.com:wannabewayno/Project-Rundown.git ```
 
 You can copy the git link from the repo page as shown below
-<img src="./images/git-clone.PNG"/>  
+<img style="max-width:50px;" src="./images/git-clone.PNG"/>
+
