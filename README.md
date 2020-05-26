@@ -21,7 +21,7 @@ Let's go through each file and flesh out how this codebase works.
     Go ahead and move into this folder (in git bash) ``` cd codebase ```
 * We should have a folder structure that looks like 
    
-<img style="max-width:50px; text-align:center;" src="./images/folder-structure.PNG"/>
+<img style="width:50px; text-align=center;" src="./images/folder-structure.PNG"/>
 
 * First off, we see a file called package.json. This is a sort of configuration file for npm that installs and keeps track of 3rd party dependencies used in the codeBase.
 * Let's go ahead and install all necessary dependencies that this codebase relies on by running
