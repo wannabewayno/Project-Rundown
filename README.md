@@ -3,7 +3,7 @@ BoilerPlate code saves you from writing repeated but necessary code in your proj
 A boilerPlate codeBase kickstarts a dev-project by not having to think about or set-up necessary dependenies and file structures. This allows you think about the problem at hand and get started on wiritng unique code for your app.
 
 ## The Rundown
-In this repo, we have the start of a boilerPlate codebase anyone can you in their next project.
+In this repo, we have the start of a boilerPlate codebase anyone can use in their next project.
 
 Let's go through each file and flesh out how this codebase works.
 
