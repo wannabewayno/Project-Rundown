@@ -17,7 +17,7 @@ Let's go through each file and flesh out how this codebase works.
     * <a href="#passport.js">passport.js</a>
 
 
-### Installation
+## Installation
 * Go ahead and clone this repo. Using your git flavoured terminal.
     I'm using git-bash as I'm a dirty windows user.
 
@@ -42,17 +42,17 @@ Let's go through each file and flesh out how this codebase works.
   
 <img width="600px" src="./images/npm-install.PNG"/>
 
-### Dependencies
+## Dependencies
 Now that we have the repo cloned and all of our dependencies installed,
 What are these dependencies?
 
 A good starting point in understanding a codeBase is to first check the package.json. This will give some insight to the intention of the code's function as these dependencies are required for the code's function. 
 
 
-#### package.json
+### package.json
 <img width="500px" src="./images/package-json.PNG"/>
 
-##### scripts
+#### scripts
 
 Scripts are called by running ```npm <script name>``` and they execute associated text as script through npm.
   * "test" we see that no tests are specified
@@ -63,33 +63,33 @@ Scripts are called by running ```npm <script name>``` and they execute associate
     * usually this is listed as a dev-dependency, but in-case it is omitted. You can learn more about nodemon here -> <a href="https://www.npmjs.com/package/nodemon">nodemon</a> 
 
 
-##### "dependencies"
+#### "dependencies"
 <img width="300px" src="./images/dependencies.PNG"/> 
 
 Here we see the all the dependencies that package.json installed when we run ```npm install```
 
-##### bcryptjs
+#### bcryptjs
 <a href="https://www.npmjs.com/package/nodemon">bcryptjs</a> 
 
-##### express
+#### express
 <a href="https://www.npmjs.com/package/express">express</a> 
 
-##### express-session
+#### express-session
 <a href="https://www.npmjs.com/package/express-session">express-session</a> 
 
-##### mysql2
+#### mysql2
 <a href="https://www.npmjs.com/package/mysql2">mysql2</a> 
 
-##### passport
+#### passport
 <a href="https://www.npmjs.com/package/passport">passport</a> 
 
-##### passport-local
+#### passport-local
 <a href="https://www.npmjs.com/package/passport-local">passport-local</a> 
 
-##### sequelize
+#### sequelize
 <a href="https://www.npmjs.com/package/sequelize">sequelize</a> 
 
-#### npm start
+### npm start
  Remember that npm start script earlier? "start" is usually attributed to executing the main function of a codeBase. This will have associated with it a list of code to be run through node.
   * This code will run the application it was coded for. 
 
@@ -105,7 +105,7 @@ Here we see the all the dependencies that package.json installed when we run ```
 
  The parameters for connecting to a database through sequelize is found in the configuration file. 
 
- ### config 
+ ## config 
  <img width="200px" src="./images/config.PNG"/>
  The configuration file is usually found in the root directory and handles all connection requirements for a database (if the app is connecting to a database).
 
@@ -117,7 +117,7 @@ Here we see the all the dependencies that package.json installed when we run ```
  
  configured for our database. 
 
- #### config.json
+ ### config.json
  <img width="400px" src="images/config-json.PNG"/>
  The configuration file handles all the information required to connect to a database.
  here, we see that all password fields are set to null.
@@ -125,13 +125,13 @@ Here we see the all the dependencies that package.json installed when we run ```
 
  The keys "development","test" and "production" refer to different configurations of the database required for the purpose in mind.
  
-* ###### "production" 
+* ##### "production" 
   * will the configuration information used when the app is deployed and live. 
 
-* ###### "test"
+* ##### "test"
  * Will be the database you might use to perfrom testing and you might have specific data seeded in the database for testing out particular cases of your codebase.
 
-* ###### "development" 
+* ##### "development" 
   * Is the database configuration used when developing the code and performing manual testing.
 
 The closest context to our situation at the moment is development. For the purpose of this walk through, i've modified the data under the "development" key in config.json to connect to a dummy database on my machine.
@@ -152,7 +152,7 @@ We can see that:
 
 Let's go ahead and see what this app is trying to do.
 
-##### Opening the app through the browser
+#### Opening the app through the browser
 
 Now that we have run ```npm start``` successfully (by setting up the config.json file)
 
@@ -162,7 +162,7 @@ we can go to the browser of your choice (for me, chrome) and type in
 this should get you here.
 
 
-##### What's happening?
+#### What's happening?
 ```npm start``` is running our server.js file which uses express to set up a server and handle queries from the browser. 
 By filling in the configuration file correctly, sequelize is making a connection our database, not throwing an error and not causing the server.js file to crash.
 
@@ -173,7 +173,7 @@ Hence we're now seeing the root route "/"
 What we're seeing is a html file being sent to the browser when we hit the default route "/".
 The route "/" is the forward slash at the end of http://localhost:8080/
 
-#### passport.js
+### passport.js
 
 
 
