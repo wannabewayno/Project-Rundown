@@ -87,7 +87,7 @@ Here we see the all the dependencies that package.json installed when we run ```
  The parameters for connecting to a database through sequelize is found in the configuration file. 
 
  ### config 
- <img src="./images/config"/>
+ <img src="./images/config.PNG"/>
  The configuration file is usually found in the root directory and handles all connection requirements for a database (if the app is connecting to a database).
 
  Here we see a two files: "config.json", "passport.js" and a directory: middleware.
@@ -95,7 +95,7 @@ Here we see the all the dependencies that package.json installed when we run ```
  At the moment our connection issues are most likely coming from the config.json file not being properly 'wait for it'.... configured for our database. 
 
  ##### config.json
- <img src="images/config-json"/>
+ <img src="images/config-json.PNG"/>
  The configuration file handles all the information required to connect to a database.
  here, we see that all password fields are set to null.
  The username is generic.
@@ -114,10 +114,10 @@ Here we see the all the dependencies that package.json installed when we run ```
 The closest context to our situation at the moment is development. For the purpose of this walk through, i've modified the data under the "development" key in config.json to connect to a dummy database on my machine.
 
 Here is what is looks like
-<img src="./images/config-json-development"/>
+<img src="./images/config-json-development.PNG"/>
 
 Let's try ```npm start again```
-<img src="./images/npm-start-working"/>
+<img src="./images/npm-start-working.PNG"/>
 
 > This seemed to do the trick.
 
@@ -142,7 +142,7 @@ this should get you here.
 By filling in the configuration file correctly, sequelize is making a connection our database, not throwing an error and not causing the server.js file to crash.
 
 Hence we're now seeing the root route "/"
-<img src="./images/route-default"/>
+<img src="./images/route-default.PNG"/>
 
 What we're seeing is a html file being sent to the browser when we hit the default route "/".
 The route "/" is the forward slash at the end of http://localhost:8080/
