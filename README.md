@@ -69,7 +69,7 @@ Here we see the all the dependencies that package.json installed when we run ```
 
 ##### passport-local
 
-##### seqeulize
+##### sequelize
 
 #### npm start
  Remember that npm start script earlier? "start" is usually attributed to executing the main function of a codeBase. This will have associated with it a list of code to be run through node.
@@ -82,7 +82,7 @@ Here we see the all the dependencies that package.json installed when we run ```
 
  An error...
 
- Looking at the error however, we can see in the first line that this seems to be a connection problem using sequelize. Sequelize as define <a href="/sequalize">above</a> is an npm package used to query an SQL database. 
+ Looking at the error however, we can see in the first line that this seems to be a connection problem using sequelize. Sequelize as defined <a href="/sequalize">above</a> is an npm package used to query an SQL database. 
 
  The parameters for connecting to a database through sequelize is found in the configuration file. 
 
