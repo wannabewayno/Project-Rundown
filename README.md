@@ -12,6 +12,7 @@ Go ahead and clone this repo. Using your git flavoured terminal.
 I'm using git-bash as I'm a dirty windows user.
 
 Find a place you want to house all these files in your machine and run:
-``` git clone git@github.com:wannabewayno/Project-Rundown.git ``` 
-You can copy the git link from the repo page here
+``` git clone git@github.com:wannabewayno/Project-Rundown.git ```
+
+You can copy the git link from the repo page as shown below
 <img src="./images/git-clone.PNG"/>  
