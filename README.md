@@ -15,8 +15,8 @@ Let's go through each file and flesh out how this codebase works.
 * <a href="#config">config</a>
     * <a href="#config.json">config.json</a>
     * <a href="#passport.js">passport.js</a>
-    * <a href="#isAuthenticate.js">passport.js</a>
-* <a href="#server.js">config</a>
+    * <a href="#isAuthenticate.js">isAuthenticate.js</a>
+* <a href="#server.js">server.js</a>
   
 
 
