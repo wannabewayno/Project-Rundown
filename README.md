@@ -292,7 +292,7 @@ It does this on line 25, by calling req.user.
     The re-direct will skip over any other route and return the user back to the deafult route "/", which is the homepage
 
 ### server.js
-<img src="./images/server-js.PNG"/>
+<img src="./images/server-js.png"/>
 
 Ok, so we have installed all necessary dependencies, updated the configuration files and configured passport in passport.js
 
