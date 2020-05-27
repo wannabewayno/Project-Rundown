@@ -16,8 +16,23 @@ Let's go through each file and flesh out how this codebase works.
     * <a href="#config.json">config.json</a>
     * <a href="#passport.js">passport.js</a>
     * <a href="#isAuthenticate.js">isAuthenticate.js</a>
+  
 * <a href="#server.js">server.js</a>
   
+* <a href="#routes">routes</a>
+   * <a href="#api-routes.js">api-routes.js</a> 
+   * <a href="#html-routes.js">html-routes.js</a> 
+
+* <a href="#models">models</a>
+   * <a href="#index.js">index.js</a> 
+   * <a href="#user.js">user.js</a> 
+
+* <a href="#public">public</a>
+   * <a href="#login.js">login.js</a> 
+   * <a href="#members.js">members.js</a> 
+   * <a href="#signup.js">signup.js</a> 
+
+* <a href="#improvements">improvements</a>
 
 
 ## Installation
@@ -303,6 +318,14 @@ We have also seen the app running by calling ```npm start```, which as I mention
 ```node server.js```, the file in question.
 
 server.js is the backbone of this application, it's what makes this app dynamic and server.js acts as the base to send and receive http responses and requests respectively.
+
+### routes
+
+#### api-routes.js
+
+#### html-routes.js
+
+### models
 
 
 
