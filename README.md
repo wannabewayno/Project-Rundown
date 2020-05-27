@@ -228,7 +228,7 @@ in our case, our strategy is defined by LocalStrategy (as we required it as such
         Since this strategy is for verifying usernames and passwords, we are telling it that our usernameField will be referenced by "email" in our database
 
 * ###### verify
-    * <img src="./images/strategyVerify.PNG" width="300px;"/>
+    * <img src="./images/strategyVerify.PNG" width="400px;"/>
   
         The verify parameter is a function that will do the verification
         for passport-local this strategy will pass in a username and password to the verification function. 
@@ -267,7 +267,7 @@ When we store information in a database or elsewhere, usually this will lose the
 
 this included the verifyPassword method defined in the verification function used above
 
-<img src="./images/serialize.PNG"/>
+<img src="./images/serialize.PNG" width="300px;"/>
 
 ### isAuthenticate.js 
 <img src="./images/isAuthenticate.PNG"/>
@@ -295,7 +295,7 @@ It does this on line 25, by calling req.user.
     The re-direct will skip over any other route and return the user back to the deafult route "/", which is the homepage
 
 ### server.js
-<img src="./images/server-js.png"/>
+<img src="./images/server-js.png" width="300px;"/>
 
 Ok, so we have installed all necessary dependencies, updated the configuration files and configured passport in passport.js
 
