@@ -195,14 +195,14 @@ Passport.js is a file that configures the <a href="#passport">passport</a> packa
 
 First off, we require the passport package to use it, then we require the <a href="#passport-local">passport-local</a> package as 1 of many authentication strategies used for passport.
 
-<img href="/images/require-passport.PNG" width="300px;"/>
+<img href="./images/require-passport.PNG" width="300px;"/>
 
 The strategy we're using currently is designed specifically for authenticating usernames and passwords from a database object.
 
 In order to authenticate this database object we need to require our database model
 as shown in line 11
 
-<img href="/images/require-db.PNG" width="300px;"/>
+<img href="./images/require-db.PNG" width="300px;"/>
 
 Now that we have passport, it's authentication strategy and our database model.
 We can configure passport to authenticate our database model.
@@ -215,15 +215,90 @@ We can configure passport to authenticate our database model.
 
 We create a new strategy by invoking ``` new Strategy(options,verify) ```
 
-in our case, our strategy is defined at LocalStrategy
+in our case, our strategy is defined by LocalStrategy (as we required it as such);
 
 <img href="/images/localStrategy.PNG" width="300px;"/>
 
 * ###### options
-    * <img href=".PNG" width="300px;"/>
+    * <img href="./images/strategyOptions.PNG" width="300px;"/>
+  
+        Since this strategy is for verifying usernames and passwords, we are telling it that our usernameField will be referenced by "email" in our database
 
 * ###### verify
-    <img href="/images/localStrategy.PNG" width="300px;"/>
+    * <img href="./images/strategyVerify.PNG" width="300px;"/>
+  
+        The verify parameter is a function that will do the verification
+        for passport-local this strategy will pass in a username and password to the verification function. 
+        We have already defined the username to be an email. and hence we will perform verification with these inputs
+    * 1.) We query our database to find a user that with the email that was provided
+    * 2.) recieve the result of our query
+    * 3.) check to see if the result returned a user (dbUser).
+        * PASS: move onto the next check
+        * FAIL: return a message saying "Incorrect email" (user not found from our query)
+    * 4.) if the result returned a user then check that the supplied password matches the stored password (in dbUser)
+        * PASS: Move onto the next check
+        * FAIL: Return a message saying "Incorrect password" (pass word doesn't match)
+    * 5.) If all checks pass, return the dbUser object (Authenticated)
+  
+##### Tell passport to use this authentication strategy
+
+Once we have defined our strategy, we can tell passport to use this simply by invoking
+
+``` passport.use(Strategy)```
+
+In our example, we can see we are telling passport to use our defined strategy and defining it all in the one instance.
+
+<img src="./images/passport-use.PNG"/>
+
+#### Other configuration Options for Passport
+
+Passport will store authenticated information under req.user in the request object as it traverses the middleware stack (more on that in <a href="#server.js">server.js</a>).
+
+However, in order for passport to store information and still have the ability to use custom methods we have defined for our 'User' model. We will need to configure this for passport too.
+
+below we have defined how passport serializes the information
+
+##### Serialization
+
+When we store information in a database or elsewhere, usually this will lose the class properties that the object may have attributed to it. In this case, we tell passport how to serialize the 'User' object and how to de-serialize the 'User' object back into it's class instance to re-attach custom methods and properties we have defined for it.
+
+this included the verifyPassword method defined in the verification function used above
+
+<img src="./images/serialize.PNG"/>
+
+### isAuthenticate.js 
+<img src="./images/isAuthenticate.PNG"/>
+
+Next the last thing in the configuration file is the isAuthenticate.js file under the middleware folder.
+
+This is a simple function and I'll outline it's use here. For a complete walk through, have a look at the file's comments.
+
+This is a function that will return the user to the "/" default route (that homepage we saw earlier) if the user isn't authenticated to access a particular route.
+
+Let's bring it up for reference. 
+<img src="./images/isAuthenticate-function.PNG"/>
+
+This function is being used as custom middleware for our app.
+Basically, we can use this as a gatekeeper for any route we want authorised access to.
+
+with passport.js, after it authenticates a user, it places the user in the requst object.
+With this function acting as middleware before a route it will check for a user:
+
+It does this on line 25, by calling req.user.
+
+* If req.user is defined then we return next()
+   Which is an internal Express function that tells the router to continue to the next route. The next route will be the route we wanted authentication for.
+* if req.user is undefined then we return a redirect.
+    The re-direct will skip over any other route and return the user back to the deafult route "/", which is the homepage
+
+### server.js
+
+
+
+
+
+
+
 
 
 
