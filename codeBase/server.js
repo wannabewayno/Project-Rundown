@@ -32,8 +32,13 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // We need to use sessions to keep track of our user's login status
+// this tells the express app to use express-sessions
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+
+//this tells the express app to use our configured passport package
+//first we intialize it
 app.use(passport.initialize());
+//Then we tell the express app to use the passpoart as a session
 app.use(passport.session());
 
 //Routes
