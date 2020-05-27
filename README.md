@@ -143,13 +143,13 @@ Basically this allows an application to remember what the user is doing and act 
  The keys "development","test" and "production" refer to different configurations of the database required for the purpose in mind.
  
 ##### "production" 
-  * will the configuration information used when the app is deployed and live. 
+  * The configuration information used when the app is deployed and live. 
 
 ##### "test"
  * Will be the database you might use to perfrom testing and you might have specific data seeded in the database for testing out particular cases of your codebase.
 
 ##### "development" 
-  * Is the database configuration used when developing the code and performing manual testing.
+  * Configuration used when developing the code and performing manual testing.
 
 The closest context to our situation at the moment is development. For the purpose of this walk through, i've modified the data under the "development" key in config.json to connect to a dummy database on my machine.
 
@@ -161,10 +161,10 @@ Let's try ```npm start again```
 
 <img width="600px" src="./images/npm-start-working.PNG"/>
 
-> This seemed to do the trick.
+> #####  This seemed to do the trick.
 
 We can see that:
-* In our database "passport_demo" (that I have created in MySQL for context). Is now being populated with a table called Users that contains columns (id,email,password,createdAt,updatedAt).
+* In our database "passport_demo" (that I have created in MySQL for context). Is now being populated with a table called 'Users' that contains columns (id,email,password,createdAt,updatedAt).
 * there is a server being set up PORT 8080; we can access is through http://localhost:8080 in our browser.
 
 Let's go ahead and see what this app is trying to do.
@@ -195,14 +195,14 @@ Passport.js is a file that configures the <a href="#passport">passport</a> packa
 
 First off, we require the passport package to use it, then we require the <a href="#passport-local">passport-local</a> package as 1 of many authentication strategies used for passport.
 
-<img href="./images/require-passport.PNG" width="300px;"/>
+<img src="./images/require-passport.PNG" width="300px;"/>
 
 The strategy we're using currently is designed specifically for authenticating usernames and passwords from a database object.
 
 In order to authenticate this database object we need to require our database model
 as shown in line 11
 
-<img href="./images/require-db.PNG" width="300px;"/>
+<img src="./images/require-db.PNG" width="300px;"/>
 
 Now that we have passport, it's authentication strategy and our database model.
 We can configure passport to authenticate our database model.
@@ -217,15 +217,15 @@ We create a new strategy by invoking ``` new Strategy(options,verify) ```
 
 in our case, our strategy is defined by LocalStrategy (as we required it as such);
 
-<img href="/images/localStrategy.PNG" width="300px;"/>
+<img src="/images/localStrategy.PNG" width="300px;"/>
 
 * ###### options
-    * <img href="./images/strategyOptions.PNG" width="300px;"/>
+    * <img src="./images/strategyOptions.PNG" width="300px;"/>
   
         Since this strategy is for verifying usernames and passwords, we are telling it that our usernameField will be referenced by "email" in our database
 
 * ###### verify
-    * <img href="./images/strategyVerify.PNG" width="300px;"/>
+    * <img src="./images/strategyVerify.PNG" width="300px;"/>
   
         The verify parameter is a function that will do the verification
         for passport-local this strategy will pass in a username and password to the verification function. 
