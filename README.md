@@ -69,25 +69,42 @@ Scripts are called by running ```npm <script name>``` and they execute associate
 Here we see the all the dependencies that package.json installed when we run ```npm install```
 
 #### bcryptjs
-<a href="https://www.npmjs.com/package/nodemon">bcryptjs</a> 
+<a href="https://www.npmjs.com/package/nodemon">bcryptjs</a> is a password hashing library.
+It uses the bcrypt hashing algorithm to securely store a password as a hash not not plain text.
+bcrypt goes further by also adding a salt: a randomly generated number at the end of your password and then hashing the result. This ensures that the same password will not have the same hash, making every hash truly unique
+
+For example:
+|password|salt|result|hash|
+|--------|----|------|----|
+|mypassword1|E1F53135E559C253|mypassword1E1F53135E559C253|$2y$12$dlvzItJZVQ0cuJCPdVQ7TuyhsdVv5V77FZW.3wCIm/pagxMbwxOY.
+|mypassword1|84B03D034B409D4E|mypassword184B03D034B409D4E|$2y$12$44MEiq0mDr6gA2gp/VxDY.DadEeCSlJh4pmEDvE0aagVTs.wIOTq.
+
+
+This is more secure as if any password information were compromised and read directly off the database, the password information would be a hash, and not the 'plain text' password. A hash is not backwards compatible and hence a password cannont be derived from the hash.
+The hash is stored as a reference and upon entering the right password a hash is generated and checked against the reference hash. If they're a match authentication is granted.
 
 #### express
-<a href="https://www.npmjs.com/package/express">express</a> 
+<a href="https://www.npmjs.com/package/express">Express</a>
+is a web server framework package that builds upon the standard http package in node.
+It's considered a standard for web applications built from node. Express simplifies the process of coding and customising a server for your application  
 
 #### express-session
-<a href="https://www.npmjs.com/package/express-session">express-session</a> 
+<a href="https://www.npmjs.com/package/express-session">express-session</a> is a middleware package designed to work with express to set up a 'session'. Sessions store user data after authentication and determines the 'state' of the app at any point in time. 
+
+Basically this allows an application to remember what the user is doing and act accordingly.
+
 
 #### mysql2
-<a href="https://www.npmjs.com/package/mysql2">mysql2</a> 
+<a href="https://www.npmjs.com/package/mysql2">mysql2</a> is a library that allows one to connect to a MySQL database. In this context, mysql2 is used in conjunction with sequelize to connect to a MySQL database. 
 
 #### passport
-<a href="https://www.npmjs.com/package/passport">passport</a> 
+<a href="https://www.npmjs.com/package/passport">passport</a> handles the authentication process of a user session. It's designed to work with express. Passport is a validation suite for authenticating requests to a database. It does so by providing configurable tools known as 'strategies' that you can set up to authenticate a database request.
 
 #### passport-local
-<a href="https://www.npmjs.com/package/passport-local">passport-local</a> 
+<a href="https://www.npmjs.com/package/passport-local">passport-local</a> is a strategy used by passport to authenticate username and password requests from a database
 
 #### sequelize
-<a href="https://www.npmjs.com/package/sequelize">sequelize</a> 
+<a href="https://www.npmjs.com/package/sequelize">sequelize</a> is an ORM that produces data models for your application and allows you to interact with a MySQL server more naturally. It uses prepared statements to turn queries into SQL syntax and talk with the SQL servers to send and recieve data.
 
 ### npm start
  Remember that npm start script earlier? "start" is usually attributed to executing the main function of a codeBase. This will have associated with it a list of code to be run through node.
@@ -155,11 +172,9 @@ Let's go ahead and see what this app is trying to do.
 #### Opening the app through the browser
 
 Now that we have run ```npm start``` successfully (by setting up the config.json file)
-
 we can go to the browser of your choice (for me, chrome) and type in 
-> <a href="http://localhost:8080">http://localhost:8080</a>
-this should get you here.
 
+> <a href="http://localhost:8080">http://localhost:8080</a>
 
 #### What's happening?
 ```npm start``` is running our server.js file which uses express to set up a server and handle queries from the browser. 
@@ -169,10 +184,48 @@ Hence we're now seeing the root route "/"
 
 <img width="600px" src="./images/route-default.PNG"/>
 
-What we're seeing is a html file being sent to the browser when we hit the default route "/".
+This is a html file being sent to the browser when we hit the default route "/".
 The route "/" is the forward slash at the end of http://localhost:8080/
 
+
 ### passport.js
+Passport.js is a file that configures the <a href="#passport">passport</a> package to provide authentication for our specific 'User' model
+
+> This file is well commented, we will outline it's function here. For more detail. Open the file and have a look at the added comments
+
+First off, we require the passport package to use it, then we require the <a href="#passport-local">passport-local</a> package as 1 of many authentication strategies used for passport.
+
+<img href="/images/require-passport.PNG" width="300px;"/>
+
+The strategy we're using currently is designed specifically for authenticating usernames and passwords from a database object.
+
+In order to authenticate this database object we need to require our database model
+as shown in line 11
+
+<img href="/images/require-db.PNG" width="300px;"/>
+
+Now that we have passport, it's authentication strategy and our database model.
+We can configure passport to authenticate our database model.
+
+#### To do this:
+* we need to define an authentication strategy
+* we tell passport to use this authentication strategy
+
+##### defining an authentication strategy
+
+We create a new strategy by invoking ``` new Strategy(options,verify) ```
+
+in our case, our strategy is defined at LocalStrategy
+
+<img href="/images/localStrategy.PNG" width="300px;"/>
+
+* ###### options
+    * <img href=".PNG" width="300px;"/>
+
+* ###### verify
+    <img href="/images/localStrategy.PNG" width="300px;"/>
+
+
 
 
 
